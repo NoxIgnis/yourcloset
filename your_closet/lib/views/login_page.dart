@@ -26,7 +26,6 @@ class _LoginPageState extends State<LoginPage>{
   void initState() {
     setFormAction(true);
     super.initState();
-    
   }
 
   setFormAction(bool acao){

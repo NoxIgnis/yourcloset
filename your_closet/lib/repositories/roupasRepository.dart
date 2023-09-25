@@ -6,19 +6,19 @@ class roupasRepository{
         icone: 'images/chapeu.jpg',
         nome: 'Chapeu',
         preco: 25,
-        sigla: 'PE',
+        id: '02PE',
         ),
         Roupas(
         icone: 'images/camisa.jpg',
         nome: 'Camisa',
         preco: 30,
-        sigla: 'TK',
+        id: 'TK01',
         ),
         Roupas(
         icone: 'images/shorts.jpg',
         nome: 'Shorts',
         preco: 80,
-        sigla: 'OG',
+        id: 'OG01',
         ),        
       ];
 

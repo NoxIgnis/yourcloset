@@ -9,7 +9,7 @@ class meuAplicativo extends StatelessWidget{
     return MaterialApp(
       title: 'Meu APP',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255) ),
+      theme: ThemeData(scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255)),
       home: LoginPage(),
     );
   }
