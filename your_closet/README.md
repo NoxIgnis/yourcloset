@@ -6,13 +6,12 @@ It's a flutter project for the university with the aim of solving a problem of a
 
 This project using some dependencies with:
 
--Firebase
--
-A few resources to get you started if this is your first Flutter project:
+    - cupertino_icons: ^1.0.2
+    - firebase_database: ^10.3.2
+    - firebase_auth: ^4.12.0
+    - cloud_firestore: ^4.12.1
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
+Install flutterFire and log in to Firebase before starting the project, configure your firebase using.
 
 ## Dev:
 Henrique Marcelo S.
