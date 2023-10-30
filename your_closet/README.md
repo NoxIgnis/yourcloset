@@ -11,13 +11,13 @@ This project using some dependencies with:
     - firebase_auth: ^4.12.0
     - cloud_firestore: ^4.12.1
 
-Install flutterFire and log in to Firebase before starting the project, configure your firebase using.
+Install flutterFire and login to Firebase before starting the project, configure your firebase using "com.example.your_closet" to initialize the project.
 
 ## Dev:
 Henrique Marcelo S.
     
-    Falta fazer:  Formulario para adicionar Roupa,
-            Tirar foto da roupa,
-            Gerar Look,
-            fazer area do admin para ver usuarios,
-            Juntar contagem das roupas,
+    What remains to be done: Form to add Clothes,
+                   Take a photo of the clothes,
+                   Generate clothes for the day,
+                   create an admin area to view users,
+                   Add clothes count,
