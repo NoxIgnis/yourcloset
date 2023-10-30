@@ -19,6 +19,7 @@ samples, guidance on mobile development, and a full API reference.
     Henrique Marcelo S.
     Falta fazer:  Formulario para adicionar Roupa,
             Tirar foto da roupa,
+            login com DB,
             Gerar Look,
             fazer area do admin para ver principais roupas,
             Ver mais das Roupas,

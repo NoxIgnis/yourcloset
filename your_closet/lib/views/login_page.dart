@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage>{
     if (isLogin){
       titulo="Bem vindo";
       actionButton = 'login';
-      toggButton = 'Entre como Convidado';
+      toggButton = 'Cadastrar';
     }else{
       titulo="Cadastrar";
       actionButton = 'Cadastrar';
@@ -133,12 +133,11 @@ logar(){
                     ),
                   ),
                 ),
-                ElevatedButton(
+                TextButton(
                   onPressed: () => setFormAction(!isLogin),
                   child: Text(toggButton),
-                  style: ElevatedButton.styleFrom(
+                  style: TextButton.styleFrom(
                     primary: Colors.transparent, // Cor do fundo transparente
-                    onPrimary: Colors.black, // Cor do texto preto
                     shadowColor: Colors.transparent,
                   ),
                 ),  
