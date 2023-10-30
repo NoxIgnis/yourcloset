@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:your_closet/views/home_page.dart';
+import 'package:your_closet/services/auth_service.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget{
   LoginPage ({Key?key}):super(key:key);
@@ -15,7 +17,7 @@ class _LoginPageState extends State<LoginPage>{
   final email = TextEditingController();
   final senha = TextEditingController();
 
-  late bool isLogin = true;
+  late bool isLogin;
   late String titulo = '';
   late String actionButton = '';
   late String toggButton = '';
@@ -40,16 +42,21 @@ class _LoginPageState extends State<LoginPage>{
       toggButton = 'Voltar ao login';
     }
   }
-
-logar(){
-  if(fomrKey.currentState!.validate()){
-    Navigator.push(context,
-      MaterialPageRoute(
-        builder: (_) => HomePage(),
-      ),
-    );
-  }
+login() async{
+   try{
+      await context.read<AuthService>().login(email.text,senha.text);
+    }on AuthException catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text(e.message)));      
+    }
 }
+cadastrar() async{
+  try{
+      await context.read<AuthService>().cadastrar(email.text,senha.text);
+    }on AuthException catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text(e.message)));      
+    }
+}
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -85,9 +92,7 @@ logar(){
                       if (value!.isEmpty){
                         return 'Informe o Email';
                       }
-                      if (value != 'admin@admin.com'){
-                        return 'email incorreto';
-                      }
+                      
                       return null;
                     },
                     cursorColor: Color.fromARGB(255, 0, 0, 0),
@@ -108,9 +113,7 @@ logar(){
                       if (value.length<8){
                         return 'Senha deve ter no mínimo 8 caracteres';
                       }
-                      if (value != '123456789'){
-                        return 'senha incorreta';
-                      }
+                     
                       return null;
                     },
                     cursorColor: Color.fromARGB(255, 0, 0, 0),
@@ -118,7 +121,15 @@ logar(){
                 ),
                 Padding(padding: EdgeInsets.only(top:20,left: 100,right: 100),
                   child: ElevatedButton(
-                    onPressed: ()=>logar(),
+                    onPressed: (){
+                      if (fomrKey.currentState!.validate()){
+                        if(isLogin){
+                          login();
+                        }else{
+                          cadastrar();
+                        }
+                      }
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -134,12 +145,12 @@ logar(){
                   ),
                 ),
                 TextButton(
-                  onPressed: () => setFormAction(!isLogin),
-                  child: Text(toggButton),
-                  style: TextButton.styleFrom(
-                    primary: Colors.transparent, // Cor do fundo transparente
-                    shadowColor: Colors.transparent,
-                  ),
+                    onPressed: () {
+                      setState(() {
+                        setFormAction(!isLogin);
+                      });
+                    },
+                    child: Text(toggButton),
                 ),  
               ],
             ),

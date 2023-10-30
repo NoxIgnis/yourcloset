@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:your_closet/views/roupas_page.dart';
 import 'package:your_closet/views/favoritas_page.dart';
+import 'package:your_closet/views/configuracoes_page.dart';
 
 class HomePage extends StatefulWidget{
 
@@ -33,17 +34,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: PageView(
         controller: page_controller,
+        onPageChanged: setPaginaAtual,
         children: [
           RoupasPage(),
           FavoritasPage(),
+          ConfiguracoesPage(),
         ],
-        onPageChanged: setPaginaAtual,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: PaginaAtual,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Todas'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Favoritas'),
+
         ],
         onTap: (pagina){
           page_controller.animateToPage(
