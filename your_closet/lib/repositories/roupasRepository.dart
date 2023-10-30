@@ -22,4 +22,11 @@ class roupasRepository{
         ),        
       ];
 
+void editaRoupa(Roupas roupaEditada){
+ tabela.forEach((roupa) {
+      if (roupa.id == roupaEditada.id) {
+        tabela[tabela.indexOf(roupa)] = roupaEditada;
+      }
+    });
+}
 }

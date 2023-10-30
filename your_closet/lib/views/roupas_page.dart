@@ -3,7 +3,9 @@ import 'package:intl/intl.dart';
 import 'package:your_closet/model/roupas.dart';
 import 'package:your_closet/repositories/roupasRepository.dart';
 import 'package:your_closet/repositories/favoritasRepository.dart';
+import 'package:your_closet/views/roupas_datalhes_page.dart';
 import 'package:provider/provider.dart';
+
 class RoupasPage extends StatefulWidget{
 
   RoupasPage ({Key?key}):super(key:key);
@@ -58,6 +60,13 @@ appBarDinamica(){
   }
 }
 
+mostrarDetalhes(Roupas roupa){
+  Navigator.push(context,
+    MaterialPageRoute(
+      builder: (_) => RoupaDetalhesPage(roupa: roupa),
+    ),
+  );
+}
 
 limparSelecionadas(){
   selecionadas = [];
@@ -81,7 +90,9 @@ limparSelecionadas(){
             onTap: () {
               setState(() {
                 selecionadas.contains(tabela[roupa]) ? selecionadas.remove(tabela[roupa]):selecionadas.add(tabela[roupa]);
-              });            },
+              });
+            },
+            onLongPress: () => mostrarDetalhes(tabela[roupa]),
             child: Container(
             width: 200,
             height: 250,
