@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:your_closet/views/roupas_page.dart';
 import 'package:your_closet/views/favoritas_page.dart';
 import 'package:your_closet/views/configuracoes_page.dart';
+import 'package:your_closet/views/clima_page.dart';
 
 class HomePage extends StatefulWidget{
 
@@ -39,6 +40,7 @@ class _HomePageState extends State<HomePage> {
           RoupasPage(),
           FavoritasPage(),
           ConfiguracoesPage(),
+          ClimaPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -46,8 +48,8 @@ class _HomePageState extends State<HomePage> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Todas'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favoritas'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Favoritas'),
-
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Configurações'),
+          BottomNavigationBarItem(icon: Icon(Icons.cloud), label: 'Clima do Dia'),
         ],
         onTap: (pagina){
           page_controller.animateToPage(

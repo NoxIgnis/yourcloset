@@ -28,10 +28,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -50,19 +47,28 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDiy3uJe1b5PR1mpCzP9MmbobvxptjhEUI',
-    appId: '1:549401114254:android:42d575bd63afb9cb6e3bdf',
-    messagingSenderId: '549401114254',
-    projectId: 'app-yourcloset',
-    storageBucket: 'app-yourcloset.appspot.com',
+    apiKey: 'AIzaSyDkS674i9jvEMc3vQnoIeb-5U6xu7RAjF8',
+    appId: '1:71569162763:android:26e7de8fae14a2c6befd0e',
+    messagingSenderId: '71569162763',
+    projectId: 'teste-yourcloset',
+    storageBucket: 'teste-yourcloset.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCt1flkPT39AGqPKwcS8sudjSxsumILzDY',
-    appId: '1:549401114254:ios:f01cf8a239bfe9236e3bdf',
-    messagingSenderId: '549401114254',
-    projectId: 'app-yourcloset',
-    storageBucket: 'app-yourcloset.appspot.com',
+    apiKey: 'AIzaSyBN5ZCpHR2DsYGdP6kb_sliAPK4tNUk1Zw',
+    appId: '1:71569162763:ios:1093b4279566411abefd0e',
+    messagingSenderId: '71569162763',
+    projectId: 'teste-yourcloset',
+    storageBucket: 'teste-yourcloset.appspot.com',
     iosBundleId: 'com.example.yourCloset',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBN5ZCpHR2DsYGdP6kb_sliAPK4tNUk1Zw',
+    appId: '1:71569162763:ios:fb4abc448730437cbefd0e',
+    messagingSenderId: '71569162763',
+    projectId: 'teste-yourcloset',
+    storageBucket: 'teste-yourcloset.appspot.com',
+    iosBundleId: 'com.example.yourCloset.RunnerTests',
   );
 }
